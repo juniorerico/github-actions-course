@@ -1,16 +1,26 @@
 name: "04 - Using Actions"
 run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
+
 on: 
     push:
     workflow_dispatch:
       inputs:
         debug:
-            description: "Enable debug mode"
+            description: Enable debug mode
+            default: false
             required: false
             type: boolean
+
+env:
+  MY_WORKFLOW_VAR: workflow
+  MY_OVERWRITTEN_VAR: workflow
+
 jobs:
     echo-data:
         runs-on: ubuntu-latest
+        env:
+            MY_JOB_VAR: job
+            MY_OVERWRITTEN_VAR: override-job
         steps:
             - name: Display Info
               run: |
@@ -26,4 +36,16 @@ jobs:
                 echo "Run Number: ${{ github.run_number }}"
             - name: Retrieve Variable
               run: echo "The value of the variable is ${{ vars.MY_VAR}}"
+            - name: Print Environment Variables
+              env:
+                MY_OVERWRITTEN_VAR: override-step
+              run: |
+                echo "Workflow: $MY_WORKFLOW_VAR"
+                echo "Job: $MY_JOB_VAR"
+                echo "Overwritten: $MY_OVERWRITTEN_VAR"
+            - name: Print Environment Variables again
+              run: |
+                echo "Workflow: $MY_WORKFLOW_VAR"
+                echo "Job: $MY_JOB_VAR"
+                echo "Overwritten: $MY_OVERWRITTEN_VAR"
 
