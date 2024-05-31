@@ -1,0 +1,23 @@
+name: "04 - Using Actions"
+on: 
+    push:
+    workflow_dispatch:
+jobs:
+    echo-data:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display Info
+              run: |
+                echo "Event name: ${{ github.event_name }}"
+                echo "Ref: ${{ github.ref }}"
+                echo "SHA: ${{ github.sha }}"
+                echo "Repository: ${{ github.repository }}"
+                echo "Repository Owner: ${{ github.repository_owner }}"
+                echo "Actor: ${{ github.actor }}"
+                echo "Workflow: ${{ github.workflow }}"
+                echo "Action: ${{ github.action }}"
+                echo "Run ID: ${{ github.run_id }}"
+                echo "Run Number: ${{ github.run_number }}"
+            - name: Retrieve Variable
+              run: echo "The value of the variable is ${{ vars.MY_VAR}}"
+
