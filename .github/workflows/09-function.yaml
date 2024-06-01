@@ -2,6 +2,8 @@ name: 09 - Using Functions
 
 on:
   pull_request:
+    branches:
+      - test-pr-workflows/**
   workflow_dispatch:
 
 jobs:
