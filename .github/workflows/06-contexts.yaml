@@ -23,6 +23,7 @@ jobs:
             MY_OVERWRITTEN_VAR: override-job
         steps:
             - name: Display Info
+              if: 
               run: |
                 echo "Event name: ${{ github.event_name }}"
                 echo "Ref: ${{ github.ref }}"
