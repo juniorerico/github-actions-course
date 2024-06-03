@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   pull_request:
     types: [opened, synchronize]
+env:
+  TEST: testing something
 jobs:
   build:
     runs-on: ubuntu-latest
