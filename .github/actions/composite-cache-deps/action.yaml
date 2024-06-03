@@ -1,0 +1,22 @@
+name: Cache Node and NPM Dependencies
+
+runs:
+  using: composite
+  steps:
+    - name: Testing composite action
+    - shell: bash
+    - run: |
+        echo "github.event_name" ${{github.event_name}}
+        echo "github.event_path" ${{github.event_path}}
+        echo "github.event" ${{github.event}}
+        echo "github.event.pull_request.title" ${{github.event.pull_request.title}}
+        echo "github.workspace" ${{github.workspace}}
+        echo "github.sha" ${{github.sha}}
+        echo "github.ref" ${{github.ref}}
+        echo "github.head_ref" ${{github.head_ref}}
+        echo "github.base_ref" ${{github.base_ref}}
+        echo "github.repository" ${{github.repository}}
+        echo "github.repository_owner" ${{github.repository_owner}}
+        echo "github.run_id" ${{github.run_id}}
+
+      
