@@ -7,8 +7,9 @@ runs:
       shell: bash
       run: |
         echo "github.event_name" ${{github.event_name}}
+        echo "github.event.type" ${{github.event.type}}
         echo "github.event_path" ${{github.event_path}}
-        echo "github.event" ${{github.event}}
+        echo "github.event" ${{ toJson(github.event) }}
         echo "github.event.pull_request.title" ${{github.event.pull_request.title}}
         echo "github.workspace" ${{github.workspace}}
         echo "github.sha" ${{github.sha}}
