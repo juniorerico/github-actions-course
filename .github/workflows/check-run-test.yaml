@@ -1,4 +1,4 @@
-name: 02 - Workflow Events
+name: Test - Check RUN
 on: 
   check_run:
     types: [completed]
