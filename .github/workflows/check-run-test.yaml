@@ -1,0 +1,13 @@
+name: 02 - Workflow Events
+on: 
+  check_run:
+    types: [completed]
+  workflow_dispatch: 
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Show the trigger"
+        run: | 
+            echo "This workflow was triggered by a '${{ github.event_name }}' event"
+            echo "The check run status was '${{ github.event.check_run.conclusion }}'"
