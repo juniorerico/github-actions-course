@@ -1,7 +1,7 @@
 name: Test - Check RUN
 on: 
   check_run:
-    types: [completed]
+    types: [created, completed]
   workflow_dispatch: 
 jobs:
   echo:
