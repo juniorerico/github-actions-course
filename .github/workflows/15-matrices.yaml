@@ -15,4 +15,5 @@ jobs:
       - name: Show number
         run: |
           echo "Matrix number is ${{ matrix.number }}" |
+          echo "Job name is ${{ job }}" |
           echo "Job number is ${{ job.check_run_id }}"
