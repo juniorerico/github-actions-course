@@ -17,3 +17,4 @@ jobs:
           echo "Matrix number is ${{ matrix.number }}"
           echo "job.container.id is ${{ job.container.id }}"
           echo "job.check_run_id is ${{ job.check_run_id }}"
+          echo "job.id is ${{ job }}"
