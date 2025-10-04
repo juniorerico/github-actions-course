@@ -13,4 +13,6 @@ jobs:
         number: [1, 2, 3]
     steps:
       - name: Show number
-        run: echo "Matrix number is ${{ matrix.number }}"
+        run: |
+          echo "Matrix number is ${{ matrix.number }}" |
+          echo "Job number is ${{ job.check_run_id }}"
