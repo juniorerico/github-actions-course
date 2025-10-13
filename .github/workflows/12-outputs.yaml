@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       build-status:
+        description: The status of the build
         type: choice
         options:
           - success
