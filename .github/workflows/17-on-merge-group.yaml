@@ -1,6 +1,7 @@
 name: On Merge Queue (merge_group)
 
 on:
+  pull_request:
   merge_group:
 
 permissions:
@@ -54,6 +55,7 @@ jobs:
   fail-job:
     name: Always fail (block merge for testing)
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'merge_group' }}
     needs: [print-pr-info]
     steps:
       - name: Intentionally fail
